@@ -1,0 +1,332 @@
+@import 'normalize.css';
+@import 'layout.css';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:700|Raleway:400,500|Roboto:900');
+/*font-family: 'Open Sans', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Roboto', sans-serif;*/
+
+
+$color-base: #ffcc00;
+
+body{
+	text-align: center;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+main {
+	display: flex;
+	min-height: 100vh;
+}
+
+
+/* Layout */
+.ba-container{
+	padding-left: 15px;
+	padding-right: 15px;
+	max-width: 1170px;
+}
+
+.ba-team {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	margin: auto;
+	min-height: 800px;
+	padding-top: 20px;
+	position: relative;
+
+	&:before {
+		content: "";
+	}
+
+	&__title {
+		flex-basis: 100%;
+		margin-bottom: 20px;
+
+		&-subtitle {
+			font-family: Raleway;
+			color:  #898f8f;
+			font-size: 18px;
+			line-height: 24px;
+			font-weight: 500;
+			text-transform: uppercase;
+			letter-spacing: -.06em;
+		}
+
+		&-header {
+			font-family: Roboto;
+			color:  $color-base;
+			font-size: 60px;
+			font-weight: 900;
+			padding-bottom: 50px;
+			position: relative;
+			background: url(../img/bonfire.png) 50% 100% no-repeat;
+
+			&:before {
+				content: "";
+				position: absolute;
+				height: 1px;
+				width: 19%;
+				background-color: $color-base;
+				left: 50%;
+				bottom: 9px;
+				transform: translateX(-105%);
+			}
+
+			&:after {
+				content: "";
+				position: absolute;
+				height: 1px;
+				width: 19%;
+				background-color: $color-base;
+				left: 50%;
+				bottom: 9px;
+				transform: translateX(5%);
+			}
+		}
+	}
+	&__photo {
+		flex-basis: 50%;
+		padding: 5%  6.5%;
+		margin-bottom: 35px;
+		border-right: 1px solid $color-base;
+
+		@media screen and (max-width: 1166px) {
+			border-right: none;
+			flex-basis: 100%;
+			margin-bottom: 0;
+		}
+
+		&-border {
+			padding: 15px;
+			font-size: 0;
+			border: 1px solid $color-base;
+			position: relative;
+			min-height: 418px;
+			min-width: 418px;
+
+
+			&:before, &:after {
+				content: "";
+				position: absolute;
+				border: 3px solid #fff;
+			}
+
+			&:before {
+				top: -2px;
+				bottom: -2px;
+				left: 100px;
+				right: 100px;
+				border-left: none;
+				border-right: none;
+			}
+			&:after {
+				top: 100px;
+				bottom: 100px;
+				left: -2px;
+				right: -2px;
+				border-top: none;
+				border-bottom: none;
+			}
+
+		}
+		&-img {
+			max-width: 388px;
+			max-height: 388px;
+			border: 1px solid $color-base;
+		}
+
+	}
+	&__text {
+		flex-basis: 50%;
+		padding: 5% 0 5%;
+		margin-bottom: 35px;
+
+		@media screen and (max-width: 1166px) {
+			border-right: none;
+			flex-basis: 100%;
+		}
+
+		&-title {
+			font-family: Roboto;
+			color:  #666666;
+			font-size: 36px;
+			font-weight: 900;
+			letter-spacing: 0.02em;
+			margin-bottom: 57px;
+			margin-top: 15px;
+			position: relative;
+
+			&:after {
+				content: "";
+				height: 1px;
+				width: 100px;
+				background: $color-base;
+				position: absolute;
+				left: 50%;
+				bottom: -27px;
+				transform: translateX(-50%);
+			}
+		}
+
+		&-subtitle {
+			font-family: Raleway;
+			color:  #666666;
+			font-size: 24px;
+			font-weight: 400;
+			margin-bottom: 27px;
+		}
+		&-about {
+			font-family: Raleway;
+			color:  #333;
+			font-size: 14px;
+			font-weight: 500;
+			line-height: 24px;
+			max-width: 420px;
+			margin: 0 auto;
+			padding-bottom: 53px;
+			position: relative;
+
+			&:after {
+				content: "";
+				width: 44px;
+				border-bottom: 4px dashed $color-base;
+				position: absolute;
+				left: calc(50% - 25px);
+				bottom: 26px;
+			}
+		}
+	}
+	&__slider {
+		flex-basis: 100%;
+		padding-bottom: 20px;
+		
+		&-item  {
+			display: inline-block;
+			width: 10px;
+			height: 10px;
+			border: 1px solid $color-base;
+			border-radius: 50%;
+			background-color: $color-base;
+
+			&:hover, &--active  {
+				background-color: #fff;
+			}
+		}
+	}
+}
+
+.ba-social {
+	list-style: none;
+	padding-left: 0;
+	margin-bottom: 26px;
+
+	&__item {
+		width: 30px;
+		height: 30px;
+		line-height: 26px;
+		border: 2px solid #ccc;
+		border-radius: 50%;
+		display: inline-block;
+		font-size: 14px;
+		color: #ccc;
+
+		&:hover {
+			border: 2px solid $color-base;
+			color: $color-base;
+		}
+	}
+}
+.ba-button {
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family: OpenSans;
+	color:  #666666;
+	font-size: 14px;
+	font-weight: 700;
+	height: 24px;
+	line-height: 24px;
+	padding: 0 10px;
+	border: 1px solid $color-base;
+
+	&:hover {
+		background-color: $color-base;
+		color: #fff;
+	}
+
+}
+.ba-arrow {
+	text-decoration: none;
+	color: $color-base;
+	font-size: 40px;
+	position: fixed;
+
+	&:hover {
+		transform: scale(1.5);
+		transition: transform .3s ease-in;
+	}
+
+	@media screen and (max-width: 1166px) {
+		visibility: hidden;
+	}
+}
+.ba-arrow-left {
+	top: 50vh;
+	left: 5%;
+}
+.ba-arrow-right {
+	top: 50vh;
+	right: 5%;
+}
+
+
+
+
+/* Typography */
+a,
+input[type="submit"],
+input[type="button"],
+button{
+	-webkit-transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+	-moz-transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+	transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+}
+input[type="submit"],
+input[type="button"],
+button,
+.ba-button{
+	display: inline-block;
+}
+input[type="submit"]:hover,
+input[type="button"]:hover,
+button:hover,
+.ba-button:hover{
+
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+textarea,
+select {
+
+	-webkit-transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+	-moz-transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+	transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+select:focus {
+
+}
+textarea {
+
+}
